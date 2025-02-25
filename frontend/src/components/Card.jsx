@@ -1,20 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Card(props) {
   return (
-    <div className="max-w-md rounded-lg overflow-hidden shadow-xl bg-white transform hover:scale-105 transition duration-300">
-      <div className={`w-full h-40 ${props.bgColor} flex items-center justify-center`}>
+    <div className="max-w-xs w-full rounded-xl overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-transform duration-300">
+      <div className={`w-full h-48 ${props.bgColor} flex items-center justify-center`}>
         {props.logo}
       </div>
       <div className="p-6">
-        <div className="font-bold text-2xl mb-4 text-gray-800">{props.title}</div>
-        <div className="flex justify-between">
-          <button className="bg-blue-500 text-white font-bold py-2 px-6 rounded hover:bg-blue-700 transition duration-300">
+        <h3 className="text-xl font-semibold text-center text-gray-800">{props.title}</h3>
+        <div className="flex gap-4 mt-6">
+          <button className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
             AI Bot
           </button>
-          <button className="bg-green-500 text-white font-bold py-2 px-6 rounded hover:bg-green-700 transition duration-300">
+          <Link
+            to="/forum"
+            className="flex-1 bg-green-600 text-white text-center py-3 rounded-lg hover:bg-green-700 transition duration-300"
+          >
             Forum
-          </button>
+          </Link>
         </div>
       </div>
     </div>
