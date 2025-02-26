@@ -10,11 +10,14 @@ function Card(props) {
       <div className="p-6">
         <h3 className="text-xl font-semibold text-center text-gray-800">{props.title}</h3>
         <div className="flex gap-4 mt-6">
-          <button className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
-            AI Bot
-          </button>
           <Link
-            to="/forum"
+            to={`/bot/${props.title}`}
+            className="flex-1 bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+          >
+            AI Bot
+          </Link>
+          <Link
+            to={`/forum/${props.title}`}
             className="flex-1 bg-green-600 text-white text-center py-3 rounded-lg hover:bg-green-700 transition duration-300"
           >
             Forum
